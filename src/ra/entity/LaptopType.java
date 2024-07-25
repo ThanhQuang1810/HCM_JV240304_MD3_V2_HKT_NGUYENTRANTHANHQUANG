@@ -78,12 +78,11 @@ public class LaptopType {
 
     @Override
     public String toString() {
-        return "LaptopType{" +
-                "typeId=" + typeId +
-                ", typeName='" + typeName + '\'' +
-                ", description='" + description + '\'' +
-                ", getIsDeleted=" + isDeleted +
-                '}';
+        return "LaptopType" +
+                "typeId:" + typeId +
+                "| typeName:" + typeName + '\'' +
+                "| description:" + description + '\'' +
+                "| getIsDeleted:" + isDeleted ;
     }
 
 

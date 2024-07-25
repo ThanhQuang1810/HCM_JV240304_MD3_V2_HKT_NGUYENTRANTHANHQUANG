@@ -5,25 +5,20 @@ import ra.entity.LaptopType;
 import java.util.Scanner;
 
 public class LaptopTypeManager {
-    private static int size = 0;
-    static LaptopType[] laptopTypes = new LaptopType[size];
-//    public boolean checkDuplicateTypeName(String typeName) {
-//        for (int i = 0; i < size; i++) {
-//            if (laptopTypes[i].getTypeName().equalsIgnoreCase(typeName)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+
 
     public static void viewLaptopTypeisDeletedFalse() {
         for (int i = 0; i < size; i++) {
-            if (laptopTypes[i] != null && laptopTypes[i].getIsDeleted() == false) {
+            if (laptopTypes[i].getIsDeleted() == false) {
                 System.out.println(laptopTypes[i]);
             }
-            else System.out.println("không có loại laptop ");
+         }
+        if(size==0){
+            System.out.println("không có loại laptop nào trong danh sách");
         }
     }
+    private static int size = 0;
+    static LaptopType[] laptopTypes = new LaptopType[size];
 
     public static void addLaptopType(LaptopType laptopType) {
         LaptopType newLaptopType[] = new LaptopType[size + 1];

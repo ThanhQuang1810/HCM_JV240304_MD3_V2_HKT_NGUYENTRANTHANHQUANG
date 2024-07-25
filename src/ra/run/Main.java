@@ -1,10 +1,12 @@
 package ra.run;
 
+import ra.business.LaptopManager;
 import ra.business.LaptopTypeManager;
 import ra.entity.LaptopType;
 import ra.util.InputMethods;
 
 public class Main {
+
     public static void main(String[] args) {
         while (true) {
             System.out.println("---------------------LaptopType-Management-----------------------");
@@ -63,16 +65,19 @@ public class Main {
                     LaptopTypeManager.deleteLaptopType(typeId);
                     break;
                 case 5:
+
                     System.out.println("quay lại LAPTOP-MANAGEMENT");
-                default:
+                return;
+                    default:
                     System.err.println("lựa chọn không chinh xác, vui long nhập lại");
             }
-            if (choice == 5) break;
+
 
         }
     }
 
     public static void menuLaptop() {
+
         while (true) {
             System.out.println("----------------------LaptopType-Menu----------------------");
             System.out.println("1. Danh sách LaptopType");
@@ -85,28 +90,30 @@ public class Main {
             byte choice = InputMethods.getByte();
             switch (choice) {
                 case 1:
-
-
+                    LaptopManager.displayLaptop();
                     break;
                 case 2:
-
+                    LaptopManager.addLaptop();
                     break;
                 case 3:
-                    System.out.println("Nhập id muốn sửa:");
-                    int idUpdate = InputMethods.getInt();
+                    LaptopManager.updateLaptop();
+
 
                     break;
                 case 4:
-                    System.out.println("Nhap id muon xoa:");
-                    int idDelete = InputMethods.getInt();
+                    LaptopManager.deleteLaptop();
+
 
                     break;
                 case 5:
-                    System.out.println("tam biet");
+                    LaptopManager.typeLaptopWithLaptop();
+                    break;
+                case 6:
+                    return;
                 default:
                     System.err.println("lựa chọn không chinh xác, vui long nhập lại");
             }
-            if (choice == 5) break;
+
 
         }
     }
